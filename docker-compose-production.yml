@@ -30,5 +30,3 @@ services:
       dockerfile: docker/prod/node-strapi/Dockerfile
     ports:
       - "1337:1337"
-
-
