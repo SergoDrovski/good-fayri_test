@@ -1,0 +1,10 @@
+{
+	"name": "http-server-node",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"start:dev": "nodemon ./bin/server.js",
+		"test": "mocha ./tests/*.test.js"
+	}
+}

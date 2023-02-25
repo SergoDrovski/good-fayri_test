@@ -1,0 +1,37 @@
+version: '3.9'
+services:
+  gateway:
+    build:
+      context: ./gateway/docker/develop/nginx
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+      - '8081:8081'
+    depends_on:
+      - api
+      - frontend
+
+  frontend:
+    build:
+      context: ./frontend/docker/develop/nginx
+      dockerfile: Dockerfile
+    volumes:
+      - './frontend:/app'
+
+  api:
+    build:
+      context: ./api/docker/develop/nginx
+      dockerfile: Dockerfile
+    depends_on:
+      - strapi
+
+  strapi:
+    build:
+      context: ./api/docker/develop/node-strapi
+      dockerfile: Dockerfile
+    volumes:
+      - './api/strapi:/app'
+    ports:
+      - "1337:1337"
+
+
