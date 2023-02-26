@@ -4,6 +4,9 @@ services:
     build:
       context: ./gateway/docker/prod/nginx
       dockerfile: Dockerfile
+    volumes:
+      - '/etc/letsencrypt:/etc/letsencrypt:ro'
+      - '/var/www/html:/var/www/html:ro'
     ports:
       - '80:80'
       - '443:443'
