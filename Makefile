@@ -14,7 +14,7 @@ install:
 	docker-compose run --rm php-cli composer install
 
 init-prod:
-	docker-compose -f docker-compose-production.yml up --build -d --remove-orphans
+	docker-compose -f docker-compose-production.yml up --build --remove-orphans
 
 down-prod:
 	docker-compose -f docker-compose-production.yml down -v --remove-orphans
