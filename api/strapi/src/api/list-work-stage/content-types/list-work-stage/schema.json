@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "list_work_stages",
+  "info": {
+    "singularName": "list-work-stage",
+    "pluralName": "list-work-stages",
+    "displayName": "listWorkStage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "stage": {
+      "type": "text"
+    }
+  }
+}

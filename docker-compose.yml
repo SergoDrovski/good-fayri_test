@@ -27,10 +27,10 @@ services:
 
   strapi:
     build:
-      context: ./api/docker/develop/node-strapi
-      dockerfile: Dockerfile
+      context: ./api
+      dockerfile: docker/develop/node-strapi/Dockerfile
     volumes:
-      - './api/strapi:/app'
+      - './api/strapi:/app/strapi'
     ports:
       - "1337:1337"
 

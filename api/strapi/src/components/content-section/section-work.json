@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_content_section_section_works",
+  "info": {
+    "displayName": " SectionWork",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service"
+    },
+    "buttonWork": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.button"
+    },
+    "workStage": {
+      "displayName": "WorkStage",
+      "type": "component",
+      "repeatable": false,
+      "component": "content-section.work-stage"
+    }
+  }
+}

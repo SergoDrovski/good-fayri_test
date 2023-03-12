@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_content_section_section_receptions",
+  "info": {
+    "displayName": "SectionAdvantage",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titleAdvantage": {
+      "type": "string"
+    },
+    "advantages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::advantage.advantage"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_form_order_form_orders",
+  "info": {
+    "displayName": "formHeader",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titleForm": {
+      "type": "string"
+    },
+    "textForm": {
+      "type": "text"
+    }
+  }
+}

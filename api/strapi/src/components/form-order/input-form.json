@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_form_order_input_forms",
+  "info": {
+    "displayName": "inputForm"
+  },
+  "options": {},
+  "attributes": {
+    "nameInput": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    }
+  }
+}

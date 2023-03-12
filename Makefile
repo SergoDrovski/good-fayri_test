@@ -10,9 +10,6 @@ docker-down-clear:
 docker-build-pull:
 	docker-compose build --pull
 
-install:
-	docker-compose run --rm php-cli composer install
-
 init-prod:
 	docker-compose -f docker-compose-production.yml up --build --remove-orphans
 
