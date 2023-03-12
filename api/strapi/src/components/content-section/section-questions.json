@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_content_section_section_questions",
+  "info": {
+    "displayName": "SectionQuestions"
+  },
+  "options": {},
+  "attributes": {
+    "titleQuestions": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::question.question"
+    }
+  }
+}

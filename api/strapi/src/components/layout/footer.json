@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_layout_footers",
+  "info": {
+    "displayName": "Footer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "logoFooter": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.logo"
+    },
+    "contactsFooter": {
+      "displayName": "contacts",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.contacts"
+    }
+  }
+}

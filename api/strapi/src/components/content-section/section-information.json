@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_content_section_section_informations",
+  "info": {
+    "displayName": "SectionInformation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "formHeader": {
+      "type": "component",
+      "repeatable": false,
+      "component": "form-order.form-order"
+    },
+    "input": {
+      "type": "component",
+      "repeatable": true,
+      "component": "form-order.input-form"
+    },
+    "buttonForm": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.button"
+    },
+    "textComp": {
+      "displayName": "TextComponent",
+      "type": "component",
+      "repeatable": false,
+      "component": "content-section.text-component"
+    }
+  }
+}
