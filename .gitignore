@@ -1,0 +1,34 @@
+# Hidden files on Windows machines
+.DS_Store
+
+# Hidden files for users using JetBrains IDEs (PHPStorm, WebStorm, etc)
+.idea
+
+# Hidden files for users using VSCode as their IDE.
+.vscode
+
+# Composer dependencies. These should be installed on the users machine
+/webserver/wordpress/vendor
+
+# database
+/webserver/wordpress/dbdata
+
+# Test suite config files. Used to overried the *.suite.dist.yml configs
+/tests/*.suite.yml
+
+# PHPCS cached files.
+
+
+# Files output by Docker
+docker-output
+
+# JavaScript dependencies. Should be installed locally on the machine, not versioned
+node_modules
+
+# Log files
+.log
+
+# Used for setting local environment variables when testing
+.env
+/webserver/wordpress/.env
+

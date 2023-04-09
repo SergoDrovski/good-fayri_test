@@ -1,37 +1,39 @@
 version: '3.9'
 services:
-  gateway:
+  webserver:
     build:
-      context: ./gateway/docker/develop/nginx
+      context: ./webserver/docker/develop/nginx
       dockerfile: Dockerfile
     ports:
-      - '8080:8080'
-      - '8081:8081'
-    depends_on:
-      - api
-      - frontend
-
-  frontend:
-    build:
-      context: ./frontend/docker/develop/nginx
-      dockerfile: Dockerfile
+      - '80:80'
     volumes:
-      - './frontend:/app'
-
-  api:
-    build:
-      context: ./api/docker/develop/nginx
-      dockerfile: Dockerfile
+      - './webserver/wordpress:/var/www/html'
     depends_on:
-      - strapi
-
-  strapi:
-    build:
-      context: ./api
-      dockerfile: docker/develop/node-strapi/Dockerfile
+      - db
+      - wordpress-fpm
+  db:
+    image: mysql:8.0
+    container_name: db
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_ROOT_PASSWORD="${MYSQL_ROOT_PASSWORD}"
+      - MYSQL_USER="${MYSQL_USER}"
+      - MYSQL_PASSWORD="${MYSQL_PASSWORD}"
     volumes:
-      - './api/strapi:/app/strapi'
-    ports:
-      - "1337:1337"
+      - './webserver/wordpress/dbdata:/var/lib/mysql'
+    command: '--default-authentication-plugin=mysql_native_password'
 
-
+  wordpress-fpm:
+    build:
+      context: ./webserver
+      dockerfile: docker/develop/wordpress-fpm/Dockerfile
+    container_name: wordpress-fpm
+    restart: unless-stopped
+    environment:
+      - WORDPRESS_DB_HOST=db:3306
+    volumes:
+        - './webserver/wordpress:/var/www/html'
+    depends_on:
+      - db
