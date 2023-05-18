@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_layout_advantages",
+  "info": {
+    "displayName": "Advantage"
+  },
+  "options": {},
+  "attributes": {
+    "titleAdv": {
+      "type": "string"
+    },
+    "descriptionAdv": {
+      "type": "text"
+    },
+    "imgAdv": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

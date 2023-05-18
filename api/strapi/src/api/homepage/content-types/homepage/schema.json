@@ -25,12 +25,23 @@
     "body": {
       "type": "dynamiczone",
       "components": [
-        "content-section.section-preview",
-        "content-section.section-work",
-        "content-section.section-reception",
-        "content-section.section-information",
-        "content-section.section-questions"
+        "section.preview",
+        "section.work",
+        "section.about",
+        "section.reviews",
+        "section.questions",
+        "section.advantages"
       ]
+    },
+    "widgetOrder": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.widget-order"
+    },
+    "widgetReview": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.widget-review"
     }
   }
 }

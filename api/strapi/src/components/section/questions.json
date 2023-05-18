@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_section_questions",
+  "info": {
+    "displayName": "questions",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titleQuestions": {
+      "type": "string"
+    },
+    "question": {
+      "displayName": "question",
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.question"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

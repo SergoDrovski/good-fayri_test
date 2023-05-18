@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_section_list_stages",
+  "info": {
+    "displayName": "listStage"
+  },
+  "options": {},
+  "attributes": {
+    "titleStage": {
+      "type": "string"
+    },
+    "descriptionStage": {
+      "type": "text"
+    }
+  }
+}

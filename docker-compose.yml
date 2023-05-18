@@ -8,22 +8,15 @@ services:
       - '8080:8080'
       - '8081:8081'
     depends_on:
-      - api
+      - strapi
       - frontend
 
   frontend:
     build:
-      context: ./frontend/docker/develop/nginx
-      dockerfile: Dockerfile
+      context: ./frontend
+      dockerfile: docker/develop/next/Dockerfile
     volumes:
-      - './frontend:/app'
-
-  api:
-    build:
-      context: ./api/docker/develop/nginx
-      dockerfile: Dockerfile
-    depends_on:
-      - strapi
+      - './frontend/next:/next'
 
   strapi:
     build:
@@ -31,7 +24,5 @@ services:
       dockerfile: docker/develop/node-strapi/Dockerfile
     volumes:
       - './api/strapi:/app/strapi'
-    ports:
-      - "1337:1337"
 
 

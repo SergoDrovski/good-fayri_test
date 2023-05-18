@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_section_works",
+  "info": {
+    "displayName": "work",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titleStage": {
+      "type": "string"
+    },
+    "imgStage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "listStage": {
+      "displayName": "listStage",
+      "type": "component",
+      "repeatable": true,
+      "component": "section.list-stage"
+    },
+    "services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

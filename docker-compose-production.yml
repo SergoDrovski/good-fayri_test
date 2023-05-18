@@ -11,25 +11,18 @@ services:
       - '80:80'
       - '443:443'
     depends_on:
+      - strapi
       - frontend
-      - api
-
 
   frontend:
     build:
       context: ./frontend
-      dockerfile: docker/prod/nginx/Dockerfile
+      dockerfile: docker/prod/next/Dockerfile
 
-  api:
-    build:
-      context: ./api
-      dockerfile: docker/prod/nginx/Dockerfile
-    depends_on:
-      - strapi
 
   strapi:
     build:
       context: ./api
       dockerfile: docker/prod/node-strapi/Dockerfile
-    ports:
-      - "1337:1337"
+    volumes:
+      - './api/strapi/data.db:/app/strapi/data.db'

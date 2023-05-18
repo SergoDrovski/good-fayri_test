@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_section_reviews",
+  "info": {
+    "displayName": "reviews",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titleReviews": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.button"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

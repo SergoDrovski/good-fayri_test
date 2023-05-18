@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_section_abouts",
+  "info": {
+    "displayName": "About",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titleAbout": {
+      "type": "string"
+    },
+    "secondTitle": {
+      "type": "richtext"
+    },
+    "textAbout": {
+      "type": "richtext"
+    },
+    "form": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.form"
+    },
+    "input": {
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.input"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.button"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

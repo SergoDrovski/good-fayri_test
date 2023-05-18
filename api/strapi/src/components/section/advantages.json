@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_section_advantages",
+  "info": {
+    "displayName": "advantages",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titleAdvantages": {
+      "type": "string"
+    },
+    "advantage": {
+      "displayName": "Advantage",
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.advantage"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}
