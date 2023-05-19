@@ -26,3 +26,4 @@ services:
       dockerfile: docker/prod/node-strapi/Dockerfile
     volumes:
       - './api/strapi/data.db:/app/strapi/data.db'
+      - './api/strapi/public/uploads:/app/strapi/public/uploads'
