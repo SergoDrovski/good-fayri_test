@@ -1,6 +1,6 @@
 import delve from "dlv";
 import React from "react";
-export default function ComponentSectionPreview({ propsData }) {
+export default function ComponentSectionPreview({ propsData, isSentOrder }) {
     return (
         <section className="preview section block-1">
             <div className="preview__wrapper section block-5">
@@ -38,7 +38,7 @@ export default function ComponentSectionPreview({ propsData }) {
                         <div dangerouslySetInnerHTML={{ __html: delve(propsData, "descriptionPreview") }} />
 
                         <div className="preview__button  more">
-                            <a href={delve(propsData, "buttonPreview.url")}><span className="align-elem">{delve(propsData, "buttonPreview.label")}</span></a>
+                            <a className={ isSentOrder ? "" : "pulse__full" } href={delve(propsData, "buttonPreview.url")}><span className="align-elem">{delve(propsData, "buttonPreview.label")}</span></a>
                         </div>
                     </div>
                 </div>

@@ -15,8 +15,6 @@ COPY ./strapi/. ./strapi
 
 WORKDIR ./strapi
 
-RUN npm run build
-
 ARG NODE_ENV=development
 
 ENV NODE_ENV=${NODE_ENV}

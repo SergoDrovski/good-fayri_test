@@ -114,6 +114,8 @@ query GetPages {
                           attributes {
                             name
                             url
+                            width
+                            height
                           }
                         }
                       }

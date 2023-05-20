@@ -14,12 +14,10 @@ export async function getStaticProps() {
         const {preview} = await getStrapiData();
         return {
             props: {...preview},
-            revalidate: 60,
         }
     } catch (error) {
         return {
             props: { preview: null },
-            revalidate: 60,
         };
     }
 }

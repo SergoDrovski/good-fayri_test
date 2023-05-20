@@ -1,8 +1,10 @@
 import delve from "dlv";
+import Image from 'next/image';
+import {imageLoader} from "@/lib/image";
 import React from "react";
 import { useState } from 'react';
 import { Popup } from './popup';
-const url = process.env.API_HOSTNAME;
+
 const id_order = process.env.ID_ORDER;
 
 export default function ComponentSectionWork({ propsData, services, widgetOrder, isSentOrder, setIsSentOrder }) {
@@ -27,10 +29,13 @@ export default function ComponentSectionWork({ propsData, services, widgetOrder,
                         {listStage &&
                             (<AccordionListStage listStage={listStage} titleStage={titleStage ?? ''} />)
                         }
-                        <img className="stages__image"
-                             src={ url + imgUrl ?? ""}
+                        <Image className="stages__image"
+                             loader={imageLoader}
+                             src={imgUrl ?? ""}
                              alt={titleStage ?? ''}
-                             width="400" />
+                             width={delve(propsData, "imgStage.data.attributes.width")}
+                             height={delve(propsData, "imgStage.data.attributes.height")}
+                        />
                     </div>
                 </div>
                 {services &&
@@ -58,8 +63,14 @@ function ServicesList({listServices, linkSection, handleShowClick}) {
         return (
             <li className="types__item item">
                 <div className="types__image-wrap image">
-                    <img className="types__image" src={ url + img.url ?? " "} alt={img.name ?? ''}
-                         width="100" height="100" />
+                    <Image
+                        loader={imageLoader}
+                        className="types__image"
+                        src={img.url ?? " "}
+                        alt={img.name ?? ''}
+                        width={img.width ?? 100}
+                        height={img.height ?? 100}
+                    />
                 </div>
                 <span className="types__title title">{item.attributes.title ?? ''}</span>
                 <span className="types__price">{item.attributes.price ?? ''}</span>

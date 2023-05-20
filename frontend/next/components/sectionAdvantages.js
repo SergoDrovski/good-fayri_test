@@ -1,5 +1,6 @@
 import delve from "dlv";
-const url = process.env.API_HOSTNAME;
+import Image from 'next/image';
+import {imageLoader} from "@/lib/image";
 
 export default function ComponentSectionAdvantages({ propsData }) {
     const titleAdvantages = delve(propsData, "titleAdvantages");
@@ -33,9 +34,12 @@ function AdvantagesList({listAdvantages}) {
                 <div className="advantages__item-inner item">
                     <div className="advantages__image-wrapper image">
                   <span className="advantages__image-span img-convert img-cover">
-                      <img className="advantages__image"
-                           src={ url + img.url ?? " "}
+                      <Image className="advantages__image"
+                           loader={imageLoader}
+                           src={img.url ?? " "}
                            alt={img.name ?? ''}
+                           width={img.width ?? ''}
+                           height={img.height ?? ''}
                       />
                   </span>
                         <div className="image-inner"></div>

@@ -102,6 +102,7 @@ node_modules
 testApp
 coverage
 
+.next
 .prod.env
 .env
 license.txt

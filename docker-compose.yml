@@ -16,8 +16,7 @@ services:
       context: ./frontend
       dockerfile: docker/develop/next/Dockerfile
     volumes:
-      - './frontend/next:/next'
-
+      - './frontend/next:/app/next'
   strapi:
     build:
       context: ./api

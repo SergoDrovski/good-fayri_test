@@ -80,7 +80,7 @@ export function Form({inputs, button, handleSent, action}) {
         <form className="form" method="post" action={action}>
             {renderedInputs}
             <div className="form__button-wrapper form-submit">
-                <button onClick={handleSendClick} className="form__button wm-input-default" type="submit" id={button.url ?? ''}>
+                <button onClick={handleSendClick} className="pulse__full form__button wm-input-default" type="submit" id={button.url ?? ''}>
                     {button.label ?? ''}
                 </button>
             </div>

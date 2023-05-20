@@ -1,6 +1,6 @@
 import delve from "dlv";
-
-const url = process.env.API_HOSTNAME;
+import Image from 'next/image';
+import {imageLoader} from "@/lib/image";
 
 export default function Header({ headerProps }) {
     return (
@@ -10,9 +10,15 @@ export default function Header({ headerProps }) {
                     <div className="page-header__logo">
                         <a className="logo__link" href="">
                             { headerProps &&
-                                (<img className="logo__img"
+                                (<Image className="logo__img"
+                                     loader={imageLoader}
                                      alt={delve(headerProps, "logoHeader.imgUrl.data.attributes.alt")}
-                                     src={url + delve(headerProps,"logoHeader.imgUrl.data.attributes.url")}/> )}
+                                     src={delve(headerProps,"logoHeader.imgUrl.data.attributes.url")}
+                                     width={delve(headerProps,"logoHeader.imgUrl.data.attributes.width")}
+                                     height={delve(headerProps,"logoHeader.imgUrl.data.attributes.height")}
+                                     priority
+                                />)
+                            }
                         </a>
                     </div>
 

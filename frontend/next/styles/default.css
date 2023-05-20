@@ -114,6 +114,7 @@ img {
 .logo__link img {
     display: inline-block;
     width: 100%;
+    height: auto;
 }
 .navigation__list {
 
@@ -314,6 +315,11 @@ img {
     }
 }
 
+.stages__image {
+    max-width: 350px;
+    height: auto;
+}
+
 @media (max-width: 800px) {
     .stages__image {
         width: 40%;
@@ -372,6 +378,7 @@ img {
 
 .types__image {
     width: 100px;
+    height: auto;
 }
 
 .types__title.title {
@@ -1077,7 +1084,7 @@ img {
 
 @media (max-width: 640px) {
     .pop-up__background {
-        width: 95vw;
+        width: 100vw;
     }
     .pop-up {
         padding: 35px;
@@ -1129,9 +1136,20 @@ img {
     animation: ani 0.5s forwards;
 
 }
+
+.pulse__full {
+    animation: glowing1 1300ms infinite;
+}
+
 @keyframes ani {
     0% {opacity: 0;}
     100% {opacity: 1;}
+}
+
+@keyframes glowing1 {
+    0% { background-color: #ec425d; box-shadow: 0 0 5px #ec425d; }
+    50% { background-color: #f26077; box-shadow: 0 0 20px #ec304e; }
+    100% { background-color: #e75f75; box-shadow: 0 0 5px #cf2540; }
 }
 
 @media (max-width: 500px) {
@@ -1160,6 +1178,7 @@ img {
 button.form__button[disabled] {
     background: linear-gradient(205deg, #bfbfbf 0%, #d3cbcb 100%) #c7c7c7;
     box-shadow: inset 0px -3px 0px rgb(0 0 0 / 10%), 0px 7px 42px rgb(169 161 164 / 74%);
+    animation: none;
 }
 button.form__button[disabled]:hover {
     background: linear-gradient(205deg, #bfbfbf 0%, #d3cbcb 100%) #c7c7c7;
