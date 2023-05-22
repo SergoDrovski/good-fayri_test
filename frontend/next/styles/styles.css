@@ -3397,7 +3397,7 @@ html.main-pageinput[disabled] {
   -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
-  background: url("../public/images/187.png") left 50% top 50% / auto auto no-repeat #f5da29;
+  background: url("../public/images/187.webp") left 50% top 50% / auto auto no-repeat #f5da29;
   -webkit-border-radius: 500px;
   -moz-border-radius: 500px;
   border-radius: 500px;
@@ -5732,7 +5732,7 @@ html.main-pageinput[disabled] {
   position: relative;
   width: auto;
   min-height: 0;
-  background: url("../public/images/bg12.png") left 50% top 0px / auto auto no-repeat;
+  background: url("../public/images/bg12.webp") left 50% top 0px / auto auto no-repeat;
   z-index: 4;
   text-align: left;
   display: block;
@@ -7742,7 +7742,7 @@ html.main-pageinput[disabled] {
   position: relative;
   width: auto;
   min-height: 993px;
-  background: url("../public/images/bg11.png") left calc(50% + 4px) bottom -72px / auto auto no-repeat, url("../public/images/pic18.png") left calc(50% + 71px) top calc(50% + 84px) / auto auto no-repeat, url("../public/images/18.png") left calc(50% + 382px) top calc(50% + 22px) / auto auto no-repeat;
+  background: url("../public/images/bg11.webp") left calc(50% + 4px) bottom -72px / auto auto no-repeat, url("../public/images/pic18.webp") left calc(50% + 71px) top calc(50% + 84px) / auto auto no-repeat, url("../public/images/18.webp") left calc(50% + 382px) top calc(50% + 22px) / auto auto no-repeat;
   max-width: 100%;
   background-color: #f3efef;
   z-index: 3;
@@ -9904,7 +9904,7 @@ html.main-pageinput[disabled] {
 
   .main-page .block-1 {
     min-height: 0;
-    background: url("../public/images/pic18.png") left calc(50% + 176px) top calc(50% + 111px) / 551px no-repeat, url("../public/images/bg11.png") left calc(50% + 4px) bottom -72px / auto auto no-repeat, url("../public/images/18.png") left calc(50% + 382px) top calc(50% + 22px) / auto auto no-repeat;
+    background: url("../public/images/pic18.webp") left calc(50% + 176px) top calc(50% + 111px) / 551px no-repeat, url("../public/images/bg11.webp") left calc(50% + 4px) bottom -72px / auto auto no-repeat, url("../public/images/18.webp") left calc(50% + 382px) top calc(50% + 22px) / auto auto no-repeat;
     padding-left: 30px;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -10501,7 +10501,7 @@ html.main-pageinput[disabled] {
   }
 
   .main-page .block-1 {
-    background: url("../public/images/pic18.png") right -84px bottom -8px / 350px no-repeat, url("../public/images/bg11.png") left calc(50% + 4px) bottom -72px / auto auto no-repeat, url("../public/images/18.png") left calc(50% + 382px) top calc(50% + 22px) / auto auto no-repeat;
+    background: url("../public/images/pic18.webp") right -84px bottom -8px / 350px no-repeat, url("../public/images/bg11.webp") left calc(50% + 4px) bottom -72px / auto auto no-repeat, url("../public/images/18.webp") left calc(50% + 382px) top calc(50% + 22px) / auto auto no-repeat;
     padding-top: 20px;
     padding-right: 20px;
     padding-left: 20px;
@@ -10834,7 +10834,7 @@ html.main-pageinput[disabled] {
   }
 
   .main-page .block-1 {
-    background: url("../public/images/pic18.png") right -42px bottom -10px / 207px no-repeat, url("../public/images/bg11.png") left calc(50% + 4px) bottom -72px / auto auto no-repeat, url("../public/images/18.png") left calc(50% + 382px) top calc(50% + 22px) / auto auto no-repeat;
+    background: url("../public/images/pic18.webp") right -42px bottom -10px / 207px no-repeat, url("../public/images/bg11.webp") left calc(50% + 4px) bottom -72px / auto auto no-repeat, url("../public/images/18.webp") left calc(50% + 382px) top calc(50% + 22px) / auto auto no-repeat;
     padding-top: 10px;
 
   }

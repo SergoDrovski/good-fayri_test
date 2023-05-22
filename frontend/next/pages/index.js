@@ -1,12 +1,12 @@
 import React, {useState} from "react";
+import Script from "next/script";
+import {createSwiperReviews, createSwiperQuestions} from '@/lib/sliderConfig';
 import delve from "dlv";
 import Head from 'next/head'
 import Header from '../components/header';
 import Footer from '../components/footer';
 import ButtonMenu from '../components/buttonMenu';
 import Content from '../components/content';
-
-
 import {getStrapiData} from '@/lib/api/apiSer';
 
 export async function getStaticProps() {
@@ -35,10 +35,11 @@ export default function Home({homepage, services, reviews}) {
     return (
         <>
             <Head>
-                <title>Create Next App</title>
+                <title>Клининговая компания Добрая Фея</title>
                 <meta name="description" content="Клининговая компания Добрая Фея"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                <link rel="icon" href="/favicon.ico"/>
+                <link rel="icon" href="/images/favicon.png"/>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
             </Head>
             <ButtonMenu/>
             <Header headerProps={header}/>
@@ -51,9 +52,19 @@ export default function Home({homepage, services, reviews}) {
                 isSentOrder={isSentOrder}
                 setIsSentOrder={setIsSentOrder}
             />
+            <Script
+                src="/js/accordion.js"
+                strategy="lazyOnload"
+            />
+            <Script
+                src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
+                strategy="lazyOnload"
+                onLoad={() => {
+                    createSwiperReviews();
+                    createSwiperQuestions();
+                }}
+            />
             <Footer footerProps={footer}/>
         </>
     )
 }
-
-
