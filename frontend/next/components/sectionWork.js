@@ -3,17 +3,17 @@ import Image from 'next/image';
 import {imageLoader} from "@/lib/image";
 import React from "react";
 import { useState } from 'react';
-import { Popup } from './popup';
+import { PopupWork } from './popupWork.js';
 
 const id_order = process.env.ID_ORDER;
 
 export default function ComponentSectionWork({ propsData, services, widgetOrder, isSentOrder, setIsSentOrder }) {
     const id = "/api/send?id=" + id_order;
-    const [showPopup, setShowPopup] = useState(false);
+    const [statePopup, setShowPopup] = useState({show: false, id: 0});
 
-    function handleShowClick(e) {
+    function handleShowClick(e, id) {
         e.preventDefault();
-        setShowPopup(true);
+        setShowPopup({show: true, id: id});
     }
 
     const titleStage = delve(propsData, "titleStage");
@@ -45,14 +45,16 @@ export default function ComponentSectionWork({ propsData, services, widgetOrder,
                     />)
                 }
             </div>
-            <Popup showPopup={showPopup}
+            {statePopup.show && <PopupWork
+                   statePopup={statePopup}
                    handleSetShowPopup={setShowPopup}
+                   service={services[statePopup.id]}
                    widgetData={widgetOrder}
                    className={'pop-up__order'}
                    isSentOrder={isSentOrder}
                    setIsSentOrder={setIsSentOrder}
                    actionForm={"/api/send?id=957527617"}
-            />
+            />}
         </section>
     )
 }
@@ -61,7 +63,7 @@ function ServicesList({listServices, linkSection, handleShowClick}) {
     const renderedServicesList = listServices.map((item, index) => {
         let img = delve(item, "attributes.img.data.attributes");
         return (
-            <li className="types__item item">
+            <li id={item.id} className="types__item item">
                 <div className="types__image-wrap image">
                     <Image
                         loader={imageLoader}
@@ -75,7 +77,7 @@ function ServicesList({listServices, linkSection, handleShowClick}) {
                 <span className="types__title title">{item.attributes.title ?? ''}</span>
                 <span className="types__price">{item.attributes.price ?? ''}</span>
                 <div className="types__button-wrap more">
-                    <a onClick={handleShowClick} className="types__button " href="">Заказать услугу</a>
+                    <a onClick={(e) => handleShowClick(e, item.id - 1)} className="types__button " href="">Заказать услугу</a>
                 </div>
             </li>
         )

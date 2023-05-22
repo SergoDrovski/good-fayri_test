@@ -28,6 +28,9 @@
     },
     "price": {
       "type": "string"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }

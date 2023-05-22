@@ -11,6 +11,7 @@ const query =
     `fragment Services on Query {
   services{
       data {
+         id
          attributes {
           img {
             data {
@@ -24,6 +25,7 @@ const query =
           }
           title
           price
+          description
         }
       }
   }

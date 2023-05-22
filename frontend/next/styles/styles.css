@@ -2421,8 +2421,6 @@ html.main-pageinput[disabled] {
   font-size: 20px;
   margin-bottom: 30px;
   overflow: hidden;
-  display: -webkit-flex;
-  display: flex;
   font-family: Montserrat, sans-serif;
   color: #4a4a4a;
   line-height: 1.5;
