@@ -473,7 +473,7 @@ img {
 }
 
 .advantages__text-wrapper {
-    margin-top: auto;
+    margin-top: 0;
 }
 
 @media (max-width: 767px) {
@@ -1163,6 +1163,7 @@ span.pop-up__close {
     height: 50px;
     right: -65px;
     top: 5px;
+    cursor: pointer;
 }
 
 .pop-up .pop-up__close::before,

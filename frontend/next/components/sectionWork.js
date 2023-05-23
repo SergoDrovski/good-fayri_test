@@ -103,9 +103,9 @@ function AccordionListStage({ listStage,  titleStage}) {
             <div className="itemAccordion">
                 <dt>
                     <a href={`#accordion${index + 1}`} aria-expanded="false" aria-controls={`accordion${index + 1}`}
-                       className="accordion-title accordionTitle js-accordionTrigger">{item.titleStage ?? ''}</a>
+                       className={`accordion-title accordionTitle js-accordionTrigger  ${index === 0 ? "is-expanded" : 'is-collapsed'}`}>{item.titleStage ?? ''}</a>
                 </dt>
-                <dd className="accordion-content accordionItem is-collapsed" id={`accordion${index + 1}`}
+                <dd className={`accordion-content accordionItem ${index === 0 ? "is-expanded animateIn" : 'is-collapsed'}`} id={`accordion${index + 1}`}
                     aria-hidden="true">
                     <p> {item.descriptionStage ?? ''} </p>
                 </dd>
