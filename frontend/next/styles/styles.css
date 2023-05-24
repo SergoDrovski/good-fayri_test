@@ -2418,7 +2418,7 @@ html.main-pageinput[disabled] {
 
 .main-page .form__text {
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 30px;
   overflow: hidden;
   font-family: Montserrat, sans-serif;
@@ -5731,7 +5731,6 @@ html.main-pageinput[disabled] {
   width: auto;
   min-height: 0;
   background: url("../public/images/bg12.webp") left 50% top 0px / auto auto no-repeat;
-  z-index: 4;
   text-align: left;
   display: block;
   -webkit-flex-direction: column;
@@ -9336,7 +9335,7 @@ html.main-pageinput[disabled] {
   width: auto;
   text-align: center;
   right: 0;
-  z-index: 1450;
+  z-index: 8;
   margin-left: 0;
   margin-right: 0;
 }

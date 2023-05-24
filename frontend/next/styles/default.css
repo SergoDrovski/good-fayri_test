@@ -783,6 +783,7 @@ img {
 
 .questions-slide-wrapper {
     position: relative;
+    height: 250px;
 }
 
 .questions-slide-wrapper::before {
@@ -869,6 +870,10 @@ img {
 }
 
 @media (max-width: 767px) {
+    .questions-slide-wrapper {
+        height: 285px;
+    }
+
     .questions {
         margin: 70px 0 70px;
     }
@@ -890,7 +895,7 @@ img {
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
     .questions__wrapper {
         padding: 0 20px;
     }
@@ -996,7 +1001,7 @@ img {
     position: fixed;
     z-index: 11;
     background-color: #4a4a4aba;
-    width: 99vw;
+    width: 100vw;
     height: 100vh;
 }
 
@@ -1004,9 +1009,9 @@ img {
     position: relative;
     display: block;
     padding: 50px;
-    width: 50%;
-    max-width: 450px;
-    min-width: 320px;
+    width: 70%;
+    max-width: 600px;
+    min-width: 300px;
     background-color: #fff;
     margin: 0 auto;
     border: 9px solid #ff9778;
@@ -1026,7 +1031,7 @@ img {
 }
 
 .pop-up__title {
-    font-size: 32px;
+    font-size: 30px;
     margin-bottom: 20px;
     display: -webkit-flex;
     display: flex;
@@ -1079,11 +1084,25 @@ img {
     border-bottom: 1px solid rgba(187, 187, 187, 0.36);
 }
 
+@media (max-width: 920px) {
+    .pop-up {
+        width: 70%;
+    }
+}
+
 @media (max-width: 767px) {
 
-    .pop-up__title {
-        font-size: 35px;
+    .pop-up {
+        width: 75%;
+    }
 
+    .pop-up__title {
+        font-size: 30px;
+
+    }
+
+    .main-page .form__text {
+        font-size: 16px;
     }
 }
 
@@ -1093,17 +1112,30 @@ img {
     }
     .pop-up {
         padding: 35px;
+        width: 75%;
     }
 
     .pop-up__title {
-        font-size: 35px;
+        font-size: 26px;
 
     }
+
+
 }
 
 @media (max-width: 480px) {
+
+    .pop-up {
+        padding: 35px;
+        width: 80%;
+    }
+
+    .main-page .form__text {
+        font-size: 14px;
+    }
+
     .pop-up__title {
-        font-size: 30px;
+        font-size: 22px;
         font-weight: 500;
     }
 
@@ -1173,9 +1205,6 @@ span.pop-up__close {
 }
 
 @media (max-width: 500px) {
-    .pop-up {
-        width: 70%;
-    }
 
     span.pop-up__close {
         right: 0;
@@ -1193,11 +1222,7 @@ span.pop-up__close {
 
 
 
-@media (max-width: 920px) {
-    .pop-up {
-        width: 50%;
-    }
-}
+
 
 .content__hidden {
     display: none;

@@ -44,9 +44,12 @@ export function Popup(
                         <h2 className="pop-up__title">
                             {widgetData.form.titleForm ?? ''} </h2>
 
-                        <div className="about__form-text form__text">
-                            {widgetData.form.descriptionForm ?? ''}<br/>
-                        </div>
+                        {widgetData.form.descriptionForm && (
+                            <div className="about__form-text form__text">
+                                {widgetData.form.descriptionForm}<br/>
+                            </div>
+                        )}
+
                         <Form
                             inputs={widgetData.input ?? []}
                             button={widgetData.button ?? {}}
