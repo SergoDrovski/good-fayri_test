@@ -2,8 +2,10 @@ import delve from "dlv";
 import Image from 'next/image';
 import {imageLoader} from "@/lib/image";
 import React from "react";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { PopupWork } from './popupWork.js';
+import {createAnimate} from "@/lib/animate";
+import {accordion} from "@/lib/accordion.js";
 
 const id_order = process.env.ID_ORDER;
 
@@ -22,12 +24,18 @@ export default function ComponentSectionWork({ propsData, services, widgetOrder,
 
 
     return (
-        <section className="service section block-29">
+        <section
+            onLoad={()=> createAnimate('.stages__list', '.itemAccordion')}
+            className="service section block-29">
             <div className="service__wrap section block-31">
                 <div className="service__stages stages layout column layout_52">
                     <div className="stages__container">
                         {listStage &&
-                            (<AccordionListStage listStage={listStage} titleStage={titleStage ?? ''} />)
+                            (<AccordionListStage
+
+                                listStage={listStage}
+                                titleStage={titleStage ?? ''}
+                            />)
                         }
                         <Image className="stages__image"
                              loader={imageLoader}
@@ -97,12 +105,14 @@ function ServicesList({listServices, linkSection, handleShowClick}) {
 }
 
 function AccordionListStage({ listStage,  titleStage}) {
-
+    useEffect(() => {
+        accordion();
+    }, [""]);
     const renderedAccordionList = listStage.map((item, index) => {
         return (
             <div className="itemAccordion">
                 <dt>
-                    <a href={`#accordion${index + 1}`} aria-expanded="false" aria-controls={`accordion${index + 1}`}
+                    <a  aria-expanded="false" aria-controls={`accordion${index + 1}`}
                        className={`accordion-title accordionTitle js-accordionTrigger  ${index === 0 ? "is-expanded" : 'is-collapsed'}`}>{item.titleStage ?? ''}</a>
                 </dt>
                 <dd className={`accordion-content accordionItem ${index === 0 ? "is-expanded animateIn" : 'is-collapsed'}`} id={`accordion${index + 1}`}

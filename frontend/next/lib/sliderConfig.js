@@ -1,3 +1,5 @@
+import { Swiper } from "@/lib/swiper-bundle.esm.browser.min.js";
+
 export function createSwiperReviews(){
     return new Swiper(".slider-reviews", {
         direction: "horizontal",

@@ -26,14 +26,14 @@ export function Popup(
 
     return (
         <div className={`pop-up__wrapper ${className}`}>
-            <div className="pop-up__background animated_opacity pop-up__close"
+            <div className="pop-up__background  pop-up__close"
                  onClick={handleCloseClick}
             >
-                <div className="pop-up">
+                <div className="pop-up animated_wipe_popup">
                 <span className="pop-up__close"
                 ></span>
                     {isSentOrder &&
-                        (<div className={`pop-up__content animated_opacity`}>
+                        (<div className={`pop-up__content animated_opacity_popup`}>
                             <h2 className="pop-up__title">{widgetData.form.titleSuccess ?? ''}</h2>
                             <div className="about__form-text form__text">{widgetData.form.descriptionSuccess ?? ''}</div><br/>
                             <div className="types__button-wrap more">

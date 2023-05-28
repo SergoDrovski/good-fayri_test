@@ -1,9 +1,16 @@
 import delve from "dlv";
 import {Popup} from "@/components/popup";
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import {createSwiperReviews} from '@/lib/sliderConfig';
 const url = process.env.API_HOSTNAME;
 
+
 export default function ComponentSectionReviews({ propsData, reviews, widgetReview }) {
+    // загрузка настроек слайдера
+    useEffect(() => {
+        createSwiperReviews();
+    }, [""]);
+
     const [showPopup, setShowPopup] = useState(false);
     const [isSentReview, setIsSentReview] = useState(false);
 
@@ -15,7 +22,10 @@ export default function ComponentSectionReviews({ propsData, reviews, widgetRevi
     const titleReviews = delve(propsData, "titleReviews");
     const button = delve(propsData, "button");
     return (
-        <section className="reviews" id={propsData.link ?? ''}>
+        <section
+            className="reviews"
+            id={propsData.link ?? ''}
+        >
             <div className="reviews__wrapper">
                 <h2 className="reviews__header header">
                     {titleReviews ?? ''}
@@ -50,7 +60,9 @@ function SliderContainer({sliders}) {
     const renderedSlide = sliders.map((slide, index) => {
         const review = delve(slide, "attributes");
         return (
-            <div className="reviews-slide swiper-slide">
+            <div
+                className="reviews-slide swiper-slide"
+            >
                 <div className="reviews-slide-wrapper">
                     <div className="reviews-header">
                         <p className="reviews-name">{review.name_author ?? ''}</p>

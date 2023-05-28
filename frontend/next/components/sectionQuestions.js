@@ -1,11 +1,20 @@
 import delve from "dlv";
+import React, {useEffect} from "react";
+import {createSwiperQuestions} from '@/lib/sliderConfig';
 const url = process.env.API_HOSTNAME;
 
 export default function ComponentSectionQuestions({ propsData }) {
+    // загрузка настроек слайдера
+    useEffect(() => {
+        createSwiperQuestions();
+    }, [""]);
+
     const titleQuestions = delve(propsData, "titleQuestions");
     const question = delve(propsData, "question");
     return (
-        <section className="questions">
+        <section
+            className="questions"
+        >
             <div className="questions__wrapper">
                 <h2 className="questions__header header">
                     {titleQuestions ?? ''}

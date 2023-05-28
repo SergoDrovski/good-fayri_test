@@ -1,6 +1,4 @@
 import React, {useState} from "react";
-import Script from "next/script";
-import {createSwiperReviews, createSwiperQuestions} from '@/lib/sliderConfig';
 import delve from "dlv";
 import Head from 'next/head'
 import Header from '../components/header';
@@ -46,7 +44,7 @@ export default function Home({homepage, services, reviews}) {
                 <meta name="og:description" content="Сервис заказа уборки Добрая Фея - верный помощник в решении бытовых вопросов и уборки дома."/>
                 <meta name="og:type" content="website"/>
                 <link rel="icon" href="/images/favicon.png"/>
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
             </Head>
             <ButtonMenu/>
             <Header headerProps={header}/>
@@ -58,18 +56,6 @@ export default function Home({homepage, services, reviews}) {
                 widgetReview={widgetReview}
                 isSentOrder={isSentOrder}
                 setIsSentOrder={setIsSentOrder}
-            />
-            <Script
-                src="/js/accordion.js"
-                strategy="lazyOnload"
-            />
-            <Script
-                src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
-                strategy="lazyOnload"
-                onLoad={() => {
-                    createSwiperReviews();
-                    createSwiperQuestions();
-                }}
             />
             <Footer footerProps={footer}/>
         </>
