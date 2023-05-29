@@ -1,5 +1,7 @@
 import delve from "dlv";
 import {Form} from "@/components/form";
+import React, {useState} from "react";
+import {createSwiperReviews} from "@/lib/sliderConfig";
 
 export function PopupWork(
     {
@@ -23,13 +25,14 @@ export function PopupWork(
     }
 
     return (
-        <div className={`pop-up__wrapper ${className}`}>
+        <div
+
+            className={`pop-up__wrapper ${className}`}>
             <div className="pop-up__background  pop-up__close animated_opacity_popup"
                  onClick={handleCloseClick}
             >
                 <div className="pop-up animated_wipe_popup">
-                <span className="pop-up__close"
-                ></span>
+                    <ClosePopup closePopup={ () => handleSetShowPopup({show: false, id: 0}) }/>
                     {isSentOrder &&
                         (<div className={`pop-up__content animated_opacity_popup`}>
                             <h2 className="pop-up__title">{widgetData.form.titleSuccess ?? ''}</h2>
@@ -55,6 +58,29 @@ export function PopupWork(
                 </div>
             </div>
         </div>
+    )
+}
+
+export function ClosePopup({ closePopup }){
+    const [buttonClassAni, setButtonClass] = useState("");
+    useState(() => {
+        setTimeout(()=>{
+            setButtonClass('aniOpen');
+        }, 1000)
+    }, );
+    function closeClick(e) {
+        e.preventDefault();
+        setButtonClass('aniClose');
+        setTimeout(()=>{
+            closePopup();
+        }, 600)
+    }
+
+    return (
+        <span
+            onClick={closeClick}
+            className={`pop-up__btnClose ${buttonClassAni}`}
+        ></span>
     )
 }
 

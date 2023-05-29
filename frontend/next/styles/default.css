@@ -1181,7 +1181,7 @@ img {
         width: 100%;
     }
 }
-.pop-up .pop-up__close::before {
+.pop-up .pop-up__btnClose::before {
     content: '';
     position: absolute;
     top: -10px;
@@ -1193,7 +1193,7 @@ img {
     transform: rotate(45deg);
     border-radius: 9px;
 }
-.pop-up .pop-up__close::after {
+.pop-up .pop-up__btnClose::after {
     content: '';
     position: absolute;
     top: -10px;
@@ -1237,13 +1237,14 @@ img {
     100% {opacity: 1;}
 }
 
+
 @keyframes glowing1 {
     0% { background-color: #ec425d; box-shadow: 0 0 5px #ec425d; }
     50% { background-color: #f26077; box-shadow: 0 0 20px #ec304e; }
     100% { background-color: #e75f75; box-shadow: 0 0 5px #cf2540; }
 }
 
-span.pop-up__close {
+span.pop-up__btnClose {
     position: absolute;
     width: 50px;
     height: 50px;
@@ -1252,11 +1253,31 @@ span.pop-up__close {
     cursor: pointer;
 }
 
-.pop-up .pop-up__close::before,
-.pop-up .pop-up__close::after {
-    top: 0;
-    right: 22px;
+.pop-up .pop-up__btnClose::before,
+.pop-up .pop-up__btnClose::after {
+    top: 6px;
+    right: 20px;
+    opacity: 0;
 }
+
+.pop-up .pop-up__btnClose.aniOpen::before {
+    opacity: 1;
+    animation: open-aniLeft 1.3s 1;
+}
+.pop-up .pop-up__btnClose.aniOpen::after {
+    opacity: 1;
+    animation: open-aniRight 1.3s 1;
+}
+
+.pop-up .pop-up__btnClose.aniClose::before {
+    opacity: 1;
+    animation: close-aniLeft 1.3s 1;
+}
+.pop-up .pop-up__btnClose.aniClose::after {
+    opacity: 1;
+    animation: close-aniRight 1.3s 1;
+}
+
 
 @media (max-width: 500px) {
 
@@ -1265,8 +1286,8 @@ span.pop-up__close {
         top: 10px;
     }
 
-    .pop-up .pop-up__close::before,
-    .pop-up .pop-up__close::after {
+    .pop-up .pop-up__btnClose::before,
+    .pop-up .pop-up__btnClose::after {
         height: 32px;
         width: 6px;
         top: 10px;
@@ -1275,6 +1296,53 @@ span.pop-up__close {
 }
 
 
+@keyframes close-aniLeft {
+    0% {
+        transform: rotate(45deg) scale(1, 1);
+    }
+    30% {
+        transform: rotate(0) scale(1, 1);
+    }
+    50% {
+        transform: rotate(0) scale(1, 0);
+    }
+}
+
+@keyframes close-aniRight {
+    0% {
+        transform: rotate(-45deg) scale(1, 1);
+    }
+    30% {
+        transform: rotate(0) scale(1, 1);
+    }
+    50% {
+        transform: rotate(0) scale(1, 0);
+    }
+}
+
+@keyframes open-aniLeft {
+    0% {
+        transform: rotate(0) scale(1, 0);
+    }
+    30% {
+        transform: rotate(0) scale(1, 1);
+    }
+    50% {
+        transform: rotate(45deg) scale(1, 1);
+    }
+}
+
+@keyframes open-aniRight {
+    0% {
+        transform: rotate(0) scale(1, 0);
+    }
+    30% {
+        transform: rotate(0) scale(1, 1);
+    }
+    50% {
+        transform: rotate(-45deg) scale(1, 1);
+    }
+}
 
 
 

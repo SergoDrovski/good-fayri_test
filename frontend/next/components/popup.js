@@ -1,5 +1,6 @@
 import delve from "dlv";
 import {Form} from "@/components/form";
+import {ClosePopup} from "@/components/popupWork";
 
 export function Popup(
     {
@@ -30,8 +31,7 @@ export function Popup(
                  onClick={handleCloseClick}
             >
                 <div className="pop-up animated_wipe_popup">
-                <span className="pop-up__close"
-                ></span>
+                    <ClosePopup closePopup={ () => handleSetShowPopup(false)} />
                     {isSentOrder &&
                         (<div className={`pop-up__content animated_opacity_popup`}>
                             <h2 className="pop-up__title">{widgetData.form.titleSuccess ?? ''}</h2>
@@ -63,11 +63,4 @@ export function Popup(
     )
 }
 
-function handleCloseClick(e) {
-    e.preventDefault();
-    if(e.target.className === 'pop-up__background') {
-        setShowPopup(false);
-    }
-
-}
 
