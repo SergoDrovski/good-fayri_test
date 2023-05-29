@@ -5724,6 +5724,7 @@ html.main-pageinput[disabled] {
 }
 
 .main-page .block-29 {
+  z-index: 4;
   border: none;
   position: relative;
   width: auto;

@@ -1,7 +1,7 @@
 import delve from "dlv";
 import Image from 'next/image';
 import {imageLoader} from "@/lib/image";
-import {createAnimate} from "@/lib/animate.js";
+import {observeAnimate} from "@/lib/animate.js";
 
 export default function ComponentSectionAdvantages({ propsData }) {
     const titleAdvantages = delve(propsData, "titleAdvantages");
@@ -9,7 +9,7 @@ export default function ComponentSectionAdvantages({ propsData }) {
 
     return (
         <section
-            onLoad={()=>createAnimate('.advantages__text-wrapper', '.advantages__text-wrapper')}
+            onLoad={()=>observeAnimate('.advantages__text-wrapper', '.advantages__text-wrapper')}
             className="advantages section block-10"
         >
             <div className="advantages__wrap section ">

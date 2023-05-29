@@ -4,7 +4,7 @@ import {imageLoader} from "@/lib/image";
 import React from "react";
 import { useState, useEffect } from 'react';
 import { PopupWork } from './popupWork.js';
-import {createAnimate} from "@/lib/animate";
+import {observeAnimate, createAnimateSlick} from "@/lib/animate";
 import {accordion} from "@/lib/accordion.js";
 
 const id_order = process.env.ID_ORDER;
@@ -25,7 +25,6 @@ export default function ComponentSectionWork({ propsData, services, widgetOrder,
 
     return (
         <section
-            onLoad={()=> createAnimate('.stages__list', '.itemAccordion')}
             className="service section block-29">
             <div className="service__wrap section block-31">
                 <div className="service__stages stages layout column layout_52">
@@ -106,6 +105,7 @@ function ServicesList({listServices, linkSection, handleShowClick}) {
 
 function AccordionListStage({ listStage,  titleStage}) {
     useEffect(() => {
+        observeAnimate('.stages__list', '.itemAccordion');
         accordion();
     }, [""]);
     const renderedAccordionList = listStage.map((item, index) => {

@@ -3,7 +3,6 @@ import delve from "dlv";
 import Head from 'next/head'
 import Header from '../components/header';
 import Footer from '../components/footer';
-import ButtonMenu from '../components/buttonMenu';
 import Content from '../components/content';
 import {getStrapiData} from '@/lib/api/apiSer';
 
@@ -46,7 +45,6 @@ export default function Home({homepage, services, reviews}) {
                 <link rel="icon" href="/images/favicon.png"/>
 
             </Head>
-            <ButtonMenu/>
             <Header headerProps={header}/>
             <Content
                 sectionsData={body ?? []}

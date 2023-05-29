@@ -1,11 +1,13 @@
 import delve from "dlv";
 import Image from 'next/image';
 import {imageLoader} from "@/lib/image";
+import ButtonMenu from '../components/buttonMenu';
 
 export default function Header({ headerProps }) {
     return (
         <header className="page-header" id="up">
             <div className="container">
+                <ButtonMenu/>
                 <div className="page-header__wrapper">
                     <div className="page-header__logo">
                         <a className="logo__link" href="">
