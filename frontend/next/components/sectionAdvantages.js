@@ -9,7 +9,7 @@ export default function ComponentSectionAdvantages({ propsData }) {
 
     return (
         <section
-            onLoad={()=>observeAnimate('.advantages__text-wrapper', '.advantages__text-wrapper')}
+            onLoad={()=>observeAnimate('.advantages__list', '.advantages__text-wrapper')}
             className="advantages section block-10"
         >
             <div className="advantages__wrap section ">

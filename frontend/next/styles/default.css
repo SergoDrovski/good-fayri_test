@@ -94,6 +94,7 @@ img {
 }
 
 .page-header__wrapper {
+    position: relative;
     padding: 30px;
     background: #fff;
     display: flex;
@@ -128,7 +129,7 @@ img {
     position: relative;
 }
 .navigation__link {
-    padding: 10px 15px;
+    padding: 15px 15px;
   margin: 2px;
   cursor: pointer;
   display: flex;
@@ -155,10 +156,48 @@ img {
     color: #20c8c8;
 }
 
+
+.navigation.openMenu .navigation-wrapp__list {
+    display: block;
+    position: fixed;
+    right: 20px;
+    border-radius: 15px;
+    top: 30px;
+    background: #fff;
+    z-index: 7;
+    border: 6px solid #ff9778;
+    animation: wipe-menu  0.5s forwards;
+}
+
+@keyframes wipe-menu {
+    0% {
+        height: 20px;
+        width: 20px;
+    }
+    100% {
+        height: 320px;
+        width: 200px;
+    }
+}
+.navigation .navigation__list {
+
+}
+
+
+.navigation.openMenu .navigation__list {
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 60px;
+    flex-direction: column;
+    animation: ani 5s forwards;
+}
+
+
 @media (max-width:960px) {
-    .page-header__nav {
+    .navigation-wrapp__list {
         display: none;
     }
+
 }
 
 @media (max-width: 640px) {
@@ -532,7 +571,7 @@ img {
     .itemAccordion {
         opacity: 0;
         transform: translateX(200px);
-        transition: opacity .3s ease-in-out .8s,transform .6s ease .8s;
+        transition: opacity .3s ease-in-out .7s,transform .6s ease .7s;
     }
 }
 
@@ -1281,7 +1320,7 @@ span.pop-up__btnClose {
 
 @media (max-width: 500px) {
 
-    span.pop-up__close {
+    span.pop-up__btnClose {
         right: 0;
         top: 10px;
     }
@@ -1295,6 +1334,17 @@ span.pop-up__btnClose {
     }
 }
 
+.button-menu-button .button-menu-button-icon-line {
+    transition: transform .6s ease .1s;
+}
+
+.button-menu-button.aniRot .button-menu-button-icon-line:first-child {
+    transform: rotate(45deg) translateX(4px) translateY(4px);
+}
+
+.button-menu-button.aniRot .button-menu-button-icon-line:last-child {
+    transform: rotate(-45deg) translateX(6px) translateY(-6px);
+}
 
 @keyframes close-aniLeft {
     0% {

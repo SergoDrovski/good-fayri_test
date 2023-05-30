@@ -1,7 +1,6 @@
 import delve from "dlv";
 import {Form} from "@/components/form";
 import React, {useState} from "react";
-import {createSwiperReviews} from "@/lib/sliderConfig";
 
 export function PopupWork(
     {

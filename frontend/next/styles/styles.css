@@ -9409,6 +9409,9 @@ html.main-pageinput[disabled] {
 }
 
 .main-page .button-menu-49 .button-menu-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   padding: 4px 5px 7px;
   box-sizing: border-box;
   font-size: 0;
@@ -9416,6 +9419,7 @@ html.main-pageinput[disabled] {
   min-height: 0;
   background: #eee;
   cursor: pointer;
+  border-radius: 25%;
   -webkit-order: 2;
   -moz-order: 2;
   order: 2;
@@ -9437,10 +9441,10 @@ html.main-pageinput[disabled] {
 
 .main-page .button-menu-49 .button-menu-button-icon-line {
   box-sizing: border-box;
-  display: block;
   min-height: 3px;
   margin-top: 3px;
   background: #000;
+
 }
 
 .main-page .button-menu-49 .button-menu-top-inner {
@@ -10104,7 +10108,7 @@ html.main-pageinput[disabled] {
   }
 
   .main-page .button-menu-49 .button-menu-button {
-    padding: 8px;
+    padding: 7px 7px 10px 7px;
     border: none;
     width: 50px;
     min-height: 50px;
@@ -10939,14 +10943,23 @@ html.main-pageinput[disabled] {
   }
 
   .main-page .button-menu-49 .button-menu-button {
-    width: 40px;
-    min-height: 40px;
+    width: 50px;
+    min-height: 50px;
     background: #ffa477;
   }
 
   .main-page .button-menu-49 .button-menu-button-icon-line {
     margin-top: 4px;
   }
+}
+
+.main-page .button-menu-49 .button-menu-button-icon-line {
+  height: 5px;
+  width: 36px;
+  background-color: #FFF;
+  cursor: pointer;
+  transform: rotate(0);
+  border-radius: 9px;
 }
 
 .main-page .button-menu .widget-4 {

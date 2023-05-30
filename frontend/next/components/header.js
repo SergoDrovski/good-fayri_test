@@ -1,13 +1,13 @@
 import delve from "dlv";
 import Image from 'next/image';
+import React, {useState} from "react";
 import {imageLoader} from "@/lib/image";
-import ButtonMenu from '../components/buttonMenu';
 
 export default function Header({ headerProps }) {
     return (
         <header className="page-header" id="up">
             <div className="container">
-                <ButtonMenu/>
+
                 <div className="page-header__wrapper">
                     <div className="page-header__logo">
                         <a className="logo__link" href="">
@@ -23,12 +23,9 @@ export default function Header({ headerProps }) {
                             }
                         </a>
                     </div>
-
-                    <nav className="page-header__nav navigation ">
-                        {headerProps &&
-                            (<NavItemsList items={delve(headerProps,"navigations.data")}/>)
-                        }
-                    </nav>
+                    {headerProps &&
+                        (<NavItemsList items={delve(headerProps,"navigations.data")}/>)
+                    }
                 </div>
             </div>
         </header>
@@ -36,6 +33,20 @@ export default function Header({ headerProps }) {
 }
 
 function NavItemsList({items}) {
+    const [menuStatus, setMenuStatus] = useState(false);
+
+    let menuClassOpen = menuStatus ? 'openMenu' : '';
+
+    function openClick(e) {
+        e.preventDefault();
+        let popup = document.querySelector('.pop-up__wrapper');
+        if(popup) {
+            popup.querySelector('.pop-up__btnClose').click();
+        }
+        setMenuStatus(!menuStatus);
+    }
+
+
     const renderedListItems = items.map(item => {
         return (
             <li className="navigation__item">
@@ -45,5 +56,32 @@ function NavItemsList({items}) {
             </li>
         )
     })
-    return <ul className="navigation__list">{renderedListItems}</ul>
+    return (
+        <nav className={`page-header__nav navigation ${menuClassOpen}`}>
+            <ButtonMenu menuStatus={menuStatus} openClick={openClick}/>
+            <div className="navigation-wrapp__list">
+                <ul className="navigation__list">
+                    {renderedListItems}
+                </ul>
+            </div>
+        </nav>
+    )
+}
+
+export function ButtonMenu({ menuStatus, openClick }) {
+    let buttonClassAni = menuStatus ? 'aniRot' : '';
+    return (
+        <div className="button-menu button-menu-49 section widget-28" style={{display: 'block'}}>
+            <div className="button-menu-top">
+                <div
+                    onClick={openClick}
+                    className={`button-menu-button ${buttonClassAni}`}
+                >
+                    <span className="button-menu-button-icon-line"></span>
+                    <span className="button-menu-button-icon-line"></span>
+                </div>
+                <div className="button-menu-top-inner"></div>
+            </div>
+        </div>
+    )
 }

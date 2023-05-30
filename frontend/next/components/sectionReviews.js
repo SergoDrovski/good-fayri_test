@@ -16,6 +16,10 @@ export default function ComponentSectionReviews({ propsData, reviews, widgetRevi
 
     function handleShowClick(e) {
         e.preventDefault();
+        let menuNav = document.querySelector('.openMenu');
+        if(menuNav) {
+            menuNav.querySelector('.button-menu-button').click();
+        }
         setShowPopup(true);
     }
 

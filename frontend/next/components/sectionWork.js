@@ -15,6 +15,10 @@ export default function ComponentSectionWork({ propsData, services, widgetOrder,
 
     function handleShowClick(e, id) {
         e.preventDefault();
+        let menuNav = document.querySelector('.openMenu');
+        if(menuNav) {
+            menuNav.querySelector('.button-menu-button').click();
+        }
         setShowPopup({show: true, id: id});
     }
 
@@ -31,7 +35,6 @@ export default function ComponentSectionWork({ propsData, services, widgetOrder,
                     <div className="stages__container">
                         {listStage &&
                             (<AccordionListStage
-
                                 listStage={listStage}
                                 titleStage={titleStage ?? ''}
                             />)
