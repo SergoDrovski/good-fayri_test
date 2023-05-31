@@ -70,9 +70,9 @@
 }
 /* Montserrat */
 
-html {
-  scroll-behavior: smooth;
-}
+/*html {*/
+/*  scroll-behavior: smooth;*/
+/*}*/
 
 html.main-page {
   font-family: sans-serif;

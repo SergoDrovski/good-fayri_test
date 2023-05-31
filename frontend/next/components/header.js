@@ -1,9 +1,14 @@
 import delve from "dlv";
 import Image from 'next/image';
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {imageLoader} from "@/lib/image";
+import {scroll} from "@/lib/animate";
 
 export default function Header({ headerProps }) {
+    //подключение скролла
+    useEffect(() => {
+        scroll();
+    }, [""]);
     return (
         <header className="page-header" id="up">
             <div className="container">
@@ -33,9 +38,7 @@ export default function Header({ headerProps }) {
 }
 
 function NavItemsList({items}) {
-    const [menuStatus, setMenuStatus] = useState(false);
-
-    let menuClassOpen = menuStatus ? 'openMenu' : '';
+    const [menuClass, setMenuClass] = useState("");
 
     function openClick(e) {
         e.preventDefault();
@@ -43,7 +46,8 @@ function NavItemsList({items}) {
         if(popup) {
             popup.querySelector('.pop-up__btnClose').click();
         }
-        setMenuStatus(!menuStatus);
+        let newClas = menuClass === 'openMenu' ? 'closeMenu' : 'openMenu';
+        setMenuClass(newClas);
     }
 
 
@@ -57,8 +61,8 @@ function NavItemsList({items}) {
         )
     })
     return (
-        <nav className={`page-header__nav navigation ${menuClassOpen}`}>
-            <ButtonMenu menuStatus={menuStatus} openClick={openClick}/>
+        <nav className={`page-header__nav navigation ${menuClass}`}>
+            <ButtonMenu menuStatus={menuClass} openClick={openClick}/>
             <div className="navigation-wrapp__list">
                 <ul className="navigation__list">
                     {renderedListItems}
@@ -68,14 +72,13 @@ function NavItemsList({items}) {
     )
 }
 
-export function ButtonMenu({ menuStatus, openClick }) {
-    let buttonClassAni = menuStatus ? 'aniRot' : '';
+export function ButtonMenu({ openClick }) {
     return (
         <div className="button-menu button-menu-49 section widget-28" style={{display: 'block'}}>
             <div className="button-menu-top">
                 <div
                     onClick={openClick}
-                    className={`button-menu-button ${buttonClassAni}`}
+                    className={`button-menu-button`}
                 >
                     <span className="button-menu-button-icon-line"></span>
                     <span className="button-menu-button-icon-line"></span>

@@ -157,16 +157,15 @@ img {
 }
 
 
-.navigation.openMenu .navigation-wrapp__list {
-    display: block;
-    position: fixed;
-    right: 20px;
-    border-radius: 15px;
-    top: 30px;
-    background: #fff;
-    z-index: 7;
-    border: 6px solid #ff9778;
-    animation: wipe-menu  0.5s forwards;
+@keyframes wipe-menu-close {
+    0% {
+        height: 320px;
+        width: 200px;
+    }
+    100% {
+        height: 20px;
+        width: 20px;
+    }
 }
 
 @keyframes wipe-menu {
@@ -179,23 +178,43 @@ img {
         width: 200px;
     }
 }
-.navigation .navigation__list {
-
-}
-
-
-.navigation.openMenu .navigation__list {
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 60px;
-    flex-direction: column;
-    animation: ani 5s forwards;
-}
 
 
 @media (max-width:960px) {
+    .navigation.openMenu .navigation-wrapp__list {
+        display: block;
+        height: 320px;
+        width: 200px;
+        animation: wipe-menu  0.5s forwards;
+    }
+
+    .navigation.closeMenu .navigation-wrapp__list {
+        display: block;
+        animation: wipe-menu-close 0.5s forwards;
+
+    }
+    .navigation.openMenu .navigation__list {
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 60px;
+        flex-direction: column;
+        animation: ani 4s forwards;
+    }
+
+    .navigation.closeMenu .navigation__list {
+        display: none;
+    }
     .navigation-wrapp__list {
         display: none;
+    }
+    .navigation .navigation-wrapp__list {
+        position: fixed;
+        right: 20px;
+        border-radius: 15px;
+        top: 30px;
+        background: #fff;
+        z-index: 7;
+        border: 6px solid #ff9778;
     }
 
 }
@@ -203,6 +222,12 @@ img {
 @media (max-width: 640px) {
     .container {
         padding: 0 20px;
+    }
+}
+
+@media (min-width: 640px) {
+    .navigation .navigation-wrapp__list {
+        right: 30px;
     }
 }
 
@@ -1338,11 +1363,11 @@ span.pop-up__btnClose {
     transition: transform .6s ease .1s;
 }
 
-.button-menu-button.aniRot .button-menu-button-icon-line:first-child {
+.openMenu .button-menu-button .button-menu-button-icon-line:first-child {
     transform: rotate(45deg) translateX(4px) translateY(4px);
 }
 
-.button-menu-button.aniRot .button-menu-button-icon-line:last-child {
+.openMenu .button-menu-button .button-menu-button-icon-line:last-child {
     transform: rotate(-45deg) translateX(6px) translateY(-6px);
 }
 

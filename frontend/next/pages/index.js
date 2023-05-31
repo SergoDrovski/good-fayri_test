@@ -43,7 +43,6 @@ export default function Home({homepage, services, reviews}) {
                 <meta name="og:description" content="Сервис заказа уборки Добрая Фея - верный помощник в решении бытовых вопросов и уборки дома."/>
                 <meta name="og:type" content="website"/>
                 <link rel="icon" href="/images/favicon.png"/>
-
             </Head>
             <Header headerProps={header}/>
             <Content
