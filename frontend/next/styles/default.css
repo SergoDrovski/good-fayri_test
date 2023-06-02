@@ -595,7 +595,7 @@ img {
     .advantages__text,
     .itemAccordion {
         opacity: 0;
-        transform: translateX(200px);
+        transform: translateX(40px);
         transition: opacity .3s ease-in-out .7s,transform .6s ease .7s;
     }
 }
