@@ -641,6 +641,7 @@ img {
 }
 
 .about__form {
+    align-self: end;
     padding: 50px;
     z-index: 1;
     width: 370px;
