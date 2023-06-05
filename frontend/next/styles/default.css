@@ -182,6 +182,7 @@ img {
 
 @media (max-width:960px) {
     .navigation.openMenu .navigation-wrapp__list {
+        box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.25);
         display: block;
         height: 320px;
         width: 200px;

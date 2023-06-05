@@ -1,5 +1,5 @@
 import delve from "dlv";
-import React from "react";
+
 export default function ComponentSectionPreview({ propsData, isSentOrder }) {
     return (
         <section className="preview section block-1">
