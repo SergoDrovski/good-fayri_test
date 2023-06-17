@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_section_custom_lists",
+  "info": {
+    "displayName": "customList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titleList": {
+      "type": "string"
+    },
+    "customitem": {
+      "displayName": "customItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "section.custom-item"
+    },
+    "redCross": {
+      "type": "boolean"
+    }
+  }
+}

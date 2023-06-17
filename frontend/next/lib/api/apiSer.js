@@ -26,6 +26,13 @@ const query =
           title
           price
           description
+          customList {
+            titleList
+            customitem {
+              description
+            }
+            redCross
+          }
         }
       }
   }

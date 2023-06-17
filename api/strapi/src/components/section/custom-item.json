@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_section_custom_items",
+  "info": {
+    "displayName": "customItem"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    }
+  }
+}

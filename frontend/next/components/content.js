@@ -1,6 +1,6 @@
 import React from "react";
 import ComponentSectionPreview from './sectionPreview';
-import ComponentSectionWork from './sectionWork';
+import { ComponentSectionWork } from './sectionWork';
 import ComponentSectionAdvantages from './sectionAdvantages';
 import ComponentSectionAbout from './sectionAbout';
 import ComponentSectionReviews from './sectionReviews';
@@ -8,7 +8,7 @@ import ComponentSectionQuestions from './sectionQuestions';
 
 const Sections = {
     ComponentSectionPreview,
-    ComponentSectionWork,
+    ComponentSectionWork: ComponentSectionWork,
     ComponentSectionAdvantages,
     ComponentSectionAbout,
     ComponentSectionReviews,

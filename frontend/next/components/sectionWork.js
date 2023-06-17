@@ -9,7 +9,7 @@ import {accordion} from "@/lib/accordion.js";
 
 const id_order = process.env.ID_ORDER;
 
-export default function ComponentSectionWork({ propsData, services, widgetOrder, isSentOrder, setIsSentOrder }) {
+export function ComponentSectionWork({ propsData, services, widgetOrder, isSentOrder, setIsSentOrder }) {
     const id = "/api/send?id=" + id_order;
     const [statePopup, setShowPopup] = useState({show: false, id: 0});
 
@@ -84,8 +84,13 @@ function ServicesList({listServices, linkSection, handleShowClick}) {
                         height={img.height ?? 100}
                     />
                 </div>
+
                 <span className="types__title title">{item.attributes.title ?? ''}</span>
                 <span className="types__price">{item.attributes.price ?? ''}</span>
+                <span className="types__description" style={{visibility: "hidden", position: "absolute"}}>{item.attributes.description ?? ''}</span>
+                <div className="custom__list-wrapp" style={{visibility: "hidden", position: "absolute"}}>
+                    <CustomList customList={item.attributes.customList ?? []}/>
+                </div>
                 <div className="types__button-wrap more">
                     <a onClick={(e) => handleShowClick(e, item.id - 1)} className="types__button " href="">Заказать услугу</a>
                 </div>
@@ -105,6 +110,43 @@ function ServicesList({listServices, linkSection, handleShowClick}) {
         </div>
     )
 }
+
+export function CustomList({ customList }){
+    if(customList.length === 0) return (<div className="custom__container"></div>)
+
+    const renderedCustomList = customList.map((item, index) => {
+        return <CustomItem  customItem={item}/>
+    })
+    return (
+        <div className="custom__container">
+            {renderedCustomList}
+        </div>
+    )
+}
+
+function CustomItem({ customItem }){
+    const renderedCustomItem = customItem.customitem.map((item, index) => {
+        return (
+            <li
+                className="custom-list__item"
+                dangerouslySetInnerHTML={{ __html: item.description }}
+            ></li>
+        )
+    })
+    let redCrossClass = customItem?.redCross ? "custom-list--red-cross" : "";
+    return (
+        <div>
+            <h3 className="custom-list__title">
+                {customItem.titleList}
+            </h3>
+            <ul className={`custom-list ${redCrossClass}`}>
+                {renderedCustomItem}
+            </ul>
+        </div>
+    )
+}
+
+
 
 function AccordionListStage({ listStage,  titleStage}) {
     useEffect(() => {
