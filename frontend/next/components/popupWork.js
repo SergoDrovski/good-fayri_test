@@ -106,6 +106,7 @@ export function ClosePopup({ closePopup }){
     }, );
     function closeClick(e) {
         e.preventDefault();
+        e.stopPropagation();
         setButtonClass('aniClose');
         setTimeout(()=>{
             closePopup(e);
