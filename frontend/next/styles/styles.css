@@ -87,11 +87,17 @@ html.main-page {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.main-page body::before {
+.main-page body.background_black::before {
   content: "";
-  height: 1px;
   display: block;
-  margin-top: -1px;
+  top: 0;
+  position: fixed;
+  bottom: 0;
+  z-index: 11;
+  left: 0;
+  right: 0;
+  background-color: #4a4a4aba;
+  animation: ani 0.7s forwards;
 }
 
 .main-page audio,

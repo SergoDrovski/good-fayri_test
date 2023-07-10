@@ -1,7 +1,8 @@
 import delve from "dlv";
 import {Form} from "@/components/form";
-import React, {useState} from "react";
+import { useState, useEffect } from 'react';
 import {CustomList} from "@/components/sectionWork";
+
 
 export function PopupWork(
     {
@@ -15,12 +16,19 @@ export function PopupWork(
         actionForm
     }) {
 
+    useEffect(() => {
+        let body = document.body ?? null
+        if(body) body.classList.add('background_black');
+    }, [""]);
+
     const titleStage = delve(widgetData, "titleStage");
 
     function handleCloseClick(e) {
         e.preventDefault();
         if(e.target.classList.contains('pop-up__close')) {
             handleSetShowPopup({show: false, id: 0});
+            let body = document.body ?? null
+            if(body) body.classList.remove('background_black');
         }
     }
 
@@ -37,14 +45,9 @@ export function PopupWork(
     }
 
     return (
-        <div
-
-            className={`pop-up__wrapper ${className}`}>
-            <div className="pop-up__background  pop-up__close animated_opacity_popup"
-                 onClick={handleCloseClick}
-            >
+        <div className={`pop-up__wrapper pop-up__close ${className}`} onClick={handleCloseClick}>
                 <div className={`pop-up animated_wipe_popup  ${classFacePopup}`}>
-                    <ClosePopup closePopup={ () => handleSetShowPopup({show: false, id: 0}) }/>
+                    <ClosePopup closePopup={handleCloseClick}/>
                     {isSentOrder &&
                         (<div className={`pop-up__content animated_opacity_popup `}>
                             <h2 className="pop-up__title">{widgetData.form.titleSuccess ?? ''}</h2>
@@ -90,7 +93,6 @@ export function PopupWork(
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     )
 }
@@ -106,14 +108,14 @@ export function ClosePopup({ closePopup }){
         e.preventDefault();
         setButtonClass('aniClose');
         setTimeout(()=>{
-            closePopup();
+            closePopup(e);
         }, 600)
     }
 
     return (
         <span
             onClick={closeClick}
-            className={`pop-up__btnClose ${buttonClassAni}`}
+            className={`pop-up__btnClose pop-up__close ${buttonClassAni}`}
         ></span>
     )
 }

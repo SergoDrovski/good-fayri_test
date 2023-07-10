@@ -1118,13 +1118,12 @@ img {
 
 /* ----------------------pop-up------------------- */
 
-.pop-up__background {
+.pop-up__wrapper {
     display: flex;
     align-items: center;
     top: 0;
     position: fixed;
-    z-index: 11;
-    background-color: #4a4a4aba;
+    z-index: 12;
     width: 100vw;
     height: 100vh;
 }
